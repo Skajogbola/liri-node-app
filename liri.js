@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 //link for OMDB API and the Bands In Town API
 var axios = require("axios");
@@ -7,17 +7,17 @@ var axios = require("axios");
 var fs = require("fs");
 
 //Link for keys
-var keys = require("./keys.js");
+// var keys = require("./keys.js");
 
-//Link for sportify
-var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify);
+// //Link for sportify
+// var Spotify = require("node-spotify-api");
+// var spotify = new Spotify(keys.spotify);
 
-// REQUIRE REQUEST
-let request = require("request");
+// // REQUIRE REQUEST
+// let request = require("request");
 
-// REQUIRE MOMENT
-var moment = require('moment');
+// // REQUIRE MOMENT
+// var moment = require('moment');
 
 var userInput = process.argv[2];
 var userQuery = process.argv.slice(3).join(" ");
@@ -47,9 +47,23 @@ function command(userInput, userQuery) {
 
 command(userInput, userQuery);
 
-axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
+function movieThis() {
+    console.log("Searching for " + userQuery);
+    if(!userQuery) {
+        userQuery = "Mr. Nobody"
+    }
+axios.get("http://www.omdbapi.com/?t=" +userQuery+ "&y=&plot=short&apikey=trilogy").then(
   function(response) {
-    console.log("The movie's rating is: " + response.data.imdbRating);
+    console.log("Title of the movie is: " + response.data.Title);
+    console.log("Year the movie came out: " + response.data.Year);
+    console.log("IMDB Rating of the movie is: " + response.data.imdbRating);
+    console.log("Rotten Tomatoes Rating of the movie is: " + response.data.Ratings[1].Value)
+    console.log("Country where the movie was produced is: " + response.data.Country);
+    console.log("Language of the movie is: " + response.data.Language);
+    console.log("Plot of the movie is: " + response.data.Plot);
+    console.log("Actors in the movie are: " + response.data.Actors);
+
   }
-);
+)
+}
 
