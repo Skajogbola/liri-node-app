@@ -75,24 +75,14 @@ function concertThis() {
                 for (i = 0; i < 4; i++) {
             console.log("Name of the venue is: " + response[i].venue.name);
             console.log("Venue location: " + `${response[i].venue.city}, ${response[i].venue.country}`);
-            // console.log("Date of the Event(MM/DD/YYYY): " + response.data.imdbRating);
+            console.log("Date of the Event(MM/DD/YYYY): " + moment(response[i].datetime).format("MM/DD/YYYY"));
+            console.log("---------------------------------")
                 }
+            } else {
+                console.log('Concert not found!');
             }
         }
     });
 }
 
-// function concertThis() {
-//     console.log("SEARCHING FOR CONCERT: " + userQuery);
-// axios.get("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp").then(
-//         function (response) {
-//             // let response = JSON.parse(body);
-//             // PARSE DATA AND USE FOR LOOP TO ACCESS PATHS TO DATA
-//             if (response.length > 0) {
-//                 for (i = 0; i < 4; i++) {
-//             console.log("Name of the venue is: " + response[i].venue.name);
-//             console.log("Venue location: " + response[i].venue.city);
-//                 }
-//             } 
-//     })
-// }
+
