@@ -16,8 +16,8 @@ var fs = require("fs");
 // REQUIRE REQUEST
 let request = require("request");
 
-// // REQUIRE MOMENT
-// var moment = require('moment');
+// REQUIRE MOMENT
+var moment = require('moment');
 
 var userInput = process.argv[2];
 var userQuery = process.argv.slice(3).join(" ");
