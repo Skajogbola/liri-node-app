@@ -22,7 +22,7 @@ Function takes the userInput (command) and the userQuery(artist), and returns th
 
 2. spotify-this-song
 
-node liri.js spotify-this-song *<song name here>*
+node liri.js spotify-this-song 'song name here'
 
 Function takes the userInput (command) and the userQuery(song), and returns the artist, full track name, a preview link and the album.
 ![spotify-this](https://github.com/Skajogbola/liri-node-app/blob/master/Images/spotify-this-song-default.PNG)
@@ -31,7 +31,7 @@ Function takes the userInput (command) and the userQuery(song), and returns the 
 
 3. movie-this
 
-node liri.js movie-this *<movie name here>*
+node liri.js movie-this 'movie name here'
 
 Function takes the userInput (command) and the userQuery(song), and returns title, author(s), release date, ratings, country of origin, language and plot.
 ![movie-this](https://github.com/Skajogbola/liri-node-app/blob/master/Images/movie-this-default.PNG)
@@ -40,7 +40,7 @@ Function takes the userInput (command) and the userQuery(song), and returns titl
 
 4. do-what-it-says
 
-node liri.js *<do-what-it-says>*
+node liri.js 'do-what-it-says'
 
 This function is a wildcard that will randomly select one of the functions and produce a search. The only way to find out what it does is to try!
 ![do-what-it-says](https://github.com/Skajogbola/liri-node-app/blob/master/Images/do-what-it-says.PNG)
