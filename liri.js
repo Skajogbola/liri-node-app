@@ -12,10 +12,6 @@ var keys = require("./keys.js");
 //Link for sportify
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
-// var spotify = new Spotify({
-//     id: 'c1c1927486ea45999cfe4f25ea20951b',
-//     secret: 'a0fdeda5c3664887bd192b8ac9871b79'
-// });
 
 // REQUIRE REQUEST
 let request = require("request");
@@ -35,7 +31,7 @@ function command(userInput, userQuery) {
             concertThis();
             break;
 
-        case "spotify-this":
+        case "spotify-this-song":
             spotifyThisSong();
             break;
 
